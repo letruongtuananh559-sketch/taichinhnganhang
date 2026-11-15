@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cổng Bài Tập Tài Chính - Ngân Hàng</title>
+    <!-- Liên kết file CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font chữ và Icon (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Thanh Menu / Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-landmark-dome"></i>
+            <span>FinBank Hub</span>
+        </div>
+        <nav class="nav-links">
+            <a href="#" class="active"><i class="fa-solid fa-house"></i> Trang Chủ</a>
+            <a href="#subjects"><i class="fa-solid fa-book-open"></i> Môn Học</a>
+            <a href="#resources"><i class="fa-solid fa-file-arrow-down"></i> Tài Liệu</a>
+            <a href="#contact"><i class="fa-solid fa-headset"></i> Hỗ Trợ</a>
+        </nav>
+        <div class="auth-buttons">
+            <button class="btn-login" id="openLoginBtn"><i class="fa-solid fa-right-to-bracket"></i> Đăng Nhập</button>
+            <button class="btn-register" id="openRegisterBtn"><i class="fa-solid fa-user-plus"></i> Đăng Ký</button>
+        </div>
+        <div class="mobile-menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- Phần Banner / Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Cổng Bài Tập Chuyên Ngành <span class="highlight">Tài Chính - Ngân Hàng</span></h1>
+            <p>Tổng hợp hệ thống bài tập, bài giải tình huống thực tế, mô hình tài chính và đề thi các học phần cốt lõi dành cho sinh viên.</p>
+            <div class="hero-search">
+                <input type="text" id="searchInput" placeholder="Tìm kiếm môn học, bài tập, giảng viên...">
+                <button id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i> Tìm Kiếm</button>
+            </div>
+        </div>
+        <div class="hero-decor">
+            <div class="floating-card card-1"><i class="fa-solid fa-chart-line"></i> Quản Trị Tài Chính</div>
+            <div class="floating-card card-2"><i class="fa-solid fa-coins"></i> Thị Trường Tiền Tệ</div>
+            <div class="floating-card card-3"><i class="fa-solid fa-shield-halved"></i> Quản Trị Rủi Ro</div>
+        </div>
+    </section>
+
+    <!-- Danh Sách Môn Học -->
+    <main class="container" id="subjects">
+        <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Các Môn Học Tài Chính - Ngân Hàng</h2>
+        
+        <div class="subject-grid">
+            <!-- Môn 1 -->
+            <div class="subject-card">
+                <div class="card-icon bg-blue"><i class="fa-solid fa-chart-pie"></i></div>
+                <h3>Tài Chính Doanh Nghiệp</h3>
+                <p>Bài tập dòng tiền, thẩm định dự án đầu tư, cấu trúc vốn và phân tích báo cáo tài chính.</p>
+                <div class="card-footer">
+                    <span class="badge">12 Bài tập</span>
+                    <button class="btn-view" onclick="openSubjectModal('Tài Chính Doanh Nghiệp')">Xem Chi Tiết <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Môn 2 -->
+            <div class="subject-card">
+                <div class="card-icon bg-green"><i class="fa-solid fa-building-columns"></i></div>
+                <h3>Ngân Hàng Thương Mại</h3>
+                <p>Nghiệp vụ tín dụng, thanh toán quốc tế, quản trị bảng cân đối kế toán ngân hàng.</p>
+                <div class="card-footer">
+                    <span class="badge">15 Bài tập</span>
+                    <button class="btn-view" onclick="openSubjectModal('Ngân Hàng Thương Mại')">Xem Chi Tiết <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Môn 3 -->
+            <div class="subject-card">
+                <div class="card-icon bg-purple"><i class="fa-solid fa-chart-line"></i></div>
+                <h3>Thị Trường Tài Chính & Chứng Khoán</h3>
+                <p>Định giá cổ phiếu, trái phiếu, phân tích kỹ thuật và quản lý danh mục đầu tư.</p>
+                <div class="card-footer">
+                    <span class="badge">10 Bài tập</span>
+                    <button class="btn-view" onclick="openSubjectModal('Thị Trường Tài Chính & Chứng Khoán')">Xem Chi Tiết <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Môn 4 -->
+            <div class="subject-card">
+                <div class="card-icon bg-orange"><i class="fa-solid fa-calculator"></i></div>
+                <h3>Toán Tài Chính</h3>
+                <p>Lãi đơn, lãi kép, niên kim, các phương pháp khấu hao và hoàn trả nợ vay.</p>
+                <div class="card-footer">
+                    <span class="badge">18 Bài tập</span>
+                    <button class="btn-view" onclick="openSubjectModal('Toán Tài Chính')">Xem Chi Tiết <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Môn 5 -->
+            <div class="subject-card">
+                <div class="card-icon bg-red"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                <h3>Quản Trị Rủi Ro Tài Chính</h3>
+                <p>Đo lường rủi ro tín dụng, rủi ro thị trường (VaR), và các công cụ phái sinh phòng ngừa.</p>
+                <div class="card-footer">
+                    <span class="badge">8 Bài tập</span>
+                    <button class="btn-view" onclick="openSubjectModal('Quản Trị Rủi Ro Tài Chính')">Xem Chi Tiết <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Môn 6 -->
+            <div class="subject-card">
+                <div class="card-icon bg-teal"><i class="fa-solid fa-globe"></i></div>
+                <h3>Tài Chính Quốc Tế</h3>
+                <p>Tỷ giá hối đoái, thị trường ngoại hối (Forex), lý thuyết ngang giá sức mua và lãi suất.</p>
+                <div class="card-footer">
+                    <span class="badge">14 Bài tập</span>
+                    <button class="btn-view" onclick="openSubjectModal('Tài Chính Quốc Tế')">Xem Chi Tiết <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal Đăng Nhập -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeLogin">&times;</span>
+            <h2><i class="fa-solid fa-right-to-bracket"></i> Đăng Nhập Tài Khoản</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label><i class="fa-solid fa-envelope"></i> Email sinh viên</label>
+                    <input type="email" placeholder="nhapmail@st.edu.vn" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-lock"></i> Mật khẩu</label>
+                    <input type="password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn-submit">Đăng Nhập Ngay</button>
+            </form>
+            <p class="switch-auth">Chưa có tài khoản? <a href="#" id="switchToRegister">Đăng ký ngay</a></p>
+        </div>
+    </div>
+
+    <!-- Modal Đăng Ký -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeRegister">&times;</span>
+            <h2><i class="fa-solid fa-user-plus"></i> Đăng Ký Tài Khoản</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label><i class="fa-solid fa-user"></i> Họ và tên</label>
+                    <input type="text" placeholder="Nguyễn Văn A" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-envelope"></i> Email sinh viên</label>
+                    <input type="email" placeholder="nhapmail@st.edu.vn" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-lock"></i> Mật khẩu</label>
+                    <input type="password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn-submit">Tạo Tài Khoản</button>
+            </form>
+            <p class="switch-auth">Đã có tài khoản? <a href="#" id="switchToLogin">Đăng nhập</a></p>
+        </div>
+    </div>
+
+    <!-- Modal Chi Tiết Môn Học -->
+    <div class="modal" id="subjectModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeSubject">&times;</span>
+            <h2 id="modalSubjectTitle">Tên Môn Học</h2>
+            <p class="modal-subtitle">Danh sách bài tập và tài liệu ôn tập:</p>
+            <ul class="exercise-list">
+                <li><span><i class="fa-solid fa-file-lines"></i> Bài tập chương 1: Cơ bản và lý thuyết</span> <a href="#" class="btn-download"><i class="fa-solid fa-download"></i> Tải về</a></li>
+                <li><span><i class="fa-solid fa-file-lines"></i> Bài tập chương 2: Bài toán thực hành tính toán</span> <a href="#" class="btn-download"><i class="fa-solid fa-download"></i> Tải về</a></li>
+                <li><span><i class="fa-solid fa-file-lines"></i> Bài tập lớn / Tình huống case study</span> <a href="#" class="btn-download"><i class="fa-solid fa-download"></i> Tải về</a></li>
+                <li><span><i class="fa-solid fa-award"></i> Đề thi thử các năm trước + Đáp án</span> <a href="#" class="btn-download"><i class="fa-solid fa-download"></i> Tải về</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Chân trang / Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 FinBank Hub - Cổng thông tin học tập chuyên ngành Tài Chính Ngân Hàng.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Liên kết file JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

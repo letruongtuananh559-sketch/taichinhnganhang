@@ -1,0 +1,526 @@
+/* Thiết lập chung */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Biến màu sắc chủ đạo (Phong cách Tài chính Ngân hàng: Xanh dương, Xanh ngọc) */
+:root {
+    --primary-color: #0052cc;
+    --primary-dark: #003d99;
+    --accent-color: #00b894;
+    --text-color: #2d3748;
+    --bg-light: #ffffff;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Thanh Menu Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: var(--bg-light);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--primary-color);
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-login, .btn-register {
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-login {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-login:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.btn-register {
+    background: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    color: #fff;
+}
+
+.btn-register:hover {
+    background: #019875;
+    border-color: #019875;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Phần Banner / Hero Section */
+.hero {
+    background: linear-gradient(135deg, #0052cc 0%, #00b894 100%);
+    color: #fff;
+    padding: 5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 600px;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-content .highlight {
+    color: #ffeaa7;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.hero-search {
+    display: flex;
+    background: #fff;
+    padding: 6px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.hero-search input {
+    flex: 1;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    outline: none;
+    border-radius: 6px;
+}
+
+.hero-search button {
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.hero-search button:hover {
+    background: var(--primary-dark);
+}
+
+/* Hiệu ứng hoạt họa các thẻ nổi ở Banner */
+.hero-decor {
+    position: relative;
+    width: 400px;
+    height: 300px;
+}
+
+.floating-card {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 15px 20px;
+    border-radius: 12px;
+    color: #fff;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+    animation: float 4s ease-in-out infinite;
+}
+
+.card-1 { top: 20px; left: 10px; animation-delay: 0s; }
+.card-2 { top: 120px; right: 20px; animation-delay: 1.5s; }
+.card-3 { bottom: 20px; left: 50px; animation-delay: 3s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Phần Môn Học */
+.container {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.section-title i {
+    color: var(--primary-color);
+}
+
+.subject-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.subject-card {
+    background: var(--bg-light);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid var(--primary-color);
+}
+
+.subject-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.card-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.bg-blue { background: #0052cc; }
+.bg-green { background: #00b894; }
+.bg-purple { background: #6c5ce7; }
+.bg-orange { background: #e17055; }
+.bg-red { background: #d63031; }
+.bg-teal { background: #00cec9; }
+
+.subject-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.subject-card p {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.badge {
+    background: #eef2f7;
+    color: var(--primary-color);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.btn-view {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: gap 0.2s;
+}
+
+.btn-view:hover {
+    gap: 10px;
+    color: var(--primary-dark);
+}
+
+/* Hệ Thống Cửa Sổ (Modal) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 35px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    animation: modalScale 0.3s ease;
+}
+
+@keyframes modalScale {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.8rem;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-color);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover {
+    background: var(--primary-dark);
+}
+
+.switch-auth {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.switch-auth a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.switch-auth a:hover {
+    text-decoration: underline;
+}
+
+/* Danh sách bài tập bên trong Modal môn học */
+.modal-subtitle {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.exercise-list {
+    list-style: none;
+}
+
+.exercise-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.95rem;
+}
+
+.exercise-list li span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #444;
+}
+
+.btn-download {
+    background: #eef2f7;
+    color: var(--primary-color);
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-download:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+/* Chân trang Footer */
+.footer {
+    background: #1a202c;
+    color: #a0aec0;
+    padding: 3rem 5%;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    font-size: 1.2rem;
+}
+
+.social-icons a {
+    color: #a0aec0;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #fff;
+}
+
+/* Responsive cho thiết bị di động */
+@media (max-width: 768px) {
+    .nav-links, .auth-buttons {
+        display: none;
+    }
+    .mobile-menu-toggle {
+        display: block;
+    }
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        padding: 3rem 5%;
+    }
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .hero-search {
+        flex-direction: column;
+        gap: 10px;
+        background: transparent;
+        box-shadow: none;
+    }
+    .hero-search input {
+        background: #fff;
+    }
+    .hero-decor {
+        display: none;
+    }
+}
